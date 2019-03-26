@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "aguafina regular";
+    src: url("../fonts/AguafinaScript-Regular.ttf") format("opentype");
+}
+@font-face {
+    font-family: "ubuntu title";
+    /* src: url("fonts/ubuntu-title.ttf") format("opentype"); */
+    src: url("../fonts/ubuntu-title-fr-1.1.ttf") format("opentype");
+}
+@font-face {
+    font-family: "ubuntu light";
+    src: url("../fonts/Ubuntu-L.ttf") format("opentype");
+}
+@font-face {
+    font-family: "ubuntu regular";
+    src: url("../fonts/Ubuntu-R.ttf") format("opentype");
+}
+@font-face {
+    font-family: great-vibes;
+    src: url("../fonts/GreatVibes-Regular.otf");
+}
+body, nav, div, p, h1, h2, h3, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "ubuntu regular", sans-serif, serif;
+    background-color: #000;
+    color: #c0c0c0;
+}
+
+h1 {
+    position: relative;
+    margin-top: 1rem;
+    padding: 0
+    ;
+    font: small-caps 3em "ubuntu title", sans-serif, serif;
+    text-align: center;
+}
+h1::first-letter {
+    font: bold 1.5em great-vibes, serif;
+    margin-right: .1em;
+    text-shadow: 4px 4px 2px #4a83c5;
+}
+h2 {
+    font: 1.5em "ubuntu light", sans-serif, serif;
+    letter-spacing: 2px;
+    text-indent: 20%;
+    margin: 0 0 1em 0;
+    padding: 0;
+    animation: letterSpacingH2 ease-in-out 5s infinite;
+}
+nav#accueil {
+    padding-left: 2%;
+    width: 60%;
+    margin: 0 auto;
+}
+nav#accueil>div.homeLinks {
+    transition: 1s;
+    position: relative;
+    font-size: 1.2em;
+    display: inline-block;
+    overflow: hidden;
+    width: 46%;
+    min-height: 20em;
+    margin: 1%;
+    text-decoration: none;
+    text-align: center;
+    background-color: #050505;
+    border: 3px solid #680404;
+    color: #11a85d;
+    border-radius: 1em;
+    cursor: pointer;
+}
+nav#accueil p.homeLinksDescription {
+    position: absolute;
+    top: 7em;
+    line-height: 1.7em;
+    text-align: left;
+    color: #78ca91;
+    padding: .5em .5em .5em 1em;
+}
+nav#accueil>div.homeLinks:hover {
+    transition: .2s;
+    background-color: #112;
+    color: #ddd;
+}
+nav#return_home>a {
+    display: inline-block;
+    position: fixed;
+    z-index: 100;
+    top: 1em;
+    left: 1em;
+    transition: .5s;
+    padding: .5em;
+    font-size: 1.2em;
+    letter-spacing: .1em;
+    text-decoration: none;
+    color: #5a80c7;
+    border-radius: .2em;
+    background-color: #222;
+}
+nav#return_home>a:hover {
+    transition: .2s;
+    background-color: #5a80c7;
+    color: #222;
+}
+h1>span.spanArinfo {
+    font: bold .7em "ubuntu regular";
+    letter-spacing: .1em;
+}
+@keyframes letterSpacingH2 {
+    0% {
+        letter-spacing: 2px;
+        color: #c0c0c0;
+    }
+    65% {
+        letter-spacing: 2px;
+        color: #c0c0c0;
+    }
+    80% {
+        letter-spacing: 5px;
+        color: #000000;
+    }
+    90% {
+        color: #000000;
+        letter-spacing: 2px;
+    }
+    100% {
+        letter-spacing: 2px;
+        color: #c0c0c0;
+    }
+}

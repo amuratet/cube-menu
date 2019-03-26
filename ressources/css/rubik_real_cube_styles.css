@@ -1,0 +1,153 @@
+div#laScene {
+    border-radius: 10px;
+    width: 70vw;
+    height: 750px;
+    /* padding: 150px; */
+    margin: 0 auto;
+    perspective: 2000px;
+    border: 2px solid #941a1a;
+    background-color: #222;
+    /* background-image: url("../patterns/what-the-hex-dark.png"); */
+    /* overflow: hidden; */
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+ul.them-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+ul.them-links li {
+    transition: .5s;
+    min-width: 5em;
+    text-align: center;
+    list-style-type: none;
+    padding: .5rem;
+    margin-top: .5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    letter-spacing: .1em;
+    color: #5a80c7;
+    border-radius: .2em;
+    background-color: #111;
+}
+ul.them-links li:hover {
+    transition: .2s;
+    background-color: #5a80c7;
+    color: #111;
+}
+/* ==========================================
+Animation cube with guys-links :hover
+========================================== */
+.link-bibi:hover #leCube {
+    transform: rotateX(22deg) rotateY(22deg);
+    display: none;
+}
+
+
+div#leCube {
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 120px;
+    transform-style: preserve-3d;
+    transform: translateZ(450px);
+    /* transform: rotateX(0deg) rotateY(0deg); */
+    transition: 1s;
+    margin: 0 auto;
+}
+
+
+/* ==================================
+LES 6 FACES */
+div#leCube>div {
+    transition: 1s;
+    border-radius: 5px;
+    /* border: 10px solid red; */
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    /* backface-visibility: hidden; */
+    /* padding: 6px; */
+    /* background-color: rgba(255, 255, 255, .1); */
+}
+div#laScene:hover div#leCube {
+    transform: rotateX(-18deg) rotateY(-18deg);
+    /* =====================================
+    ICI ANIM INFINITE ?
+    ===================================== */
+}
+
+div#face_avant {
+    transition: 1s;
+    transform: rotateY(0deg) translateZ(200px);
+    /* background-color: rgba(88, 255, 55, 0.5); */
+    /* opacity: 0; */
+    background: black url("../Bibi/come2.png") no-repeat center center;
+    background-size: cover;
+}
+#face_avant img {
+    /* width: 100%; */
+    height: 100%;
+    /* left: 0; */
+}
+/* div#leCube>div>div {
+    background-color: rgba(0, 0, 0, 1);
+    border: 3px solid rgba(0, 0, 0, 0.1);
+} */
+/* div#face_avant>div:nth-child(11) {
+    background-color: #666;
+    content: 'hello';
+} */
+div#face_arriere {
+    background-color: rgba(223, 209, 14, 0.5);
+    background: black url("../cecile/cecile.png") no-repeat center center;
+    background-size: cover;
+    transform: rotateY(180deg) translateZ(200px);
+}
+/* div#face_arriere>div {
+    transition: 1s;
+} */
+
+div#face_gauche {
+    transform: rotateY(-90deg) translateZ(200px);
+    background-color: rgba(143, 0, 0, 0.5);
+    background: black url("../cecile/cecile.png") no-repeat center center;
+    background-size: cover;
+}
+
+div#face_droite {
+    transform: rotateY(90deg) translateZ(200px);
+    /* background-color: rgba(199, 61, 6, 0.5); */
+}
+.cecile {
+    background: black url("../cecile/cecile.png") no-repeat center center;
+    background-size: cover;
+}
+
+div#face_haut {
+    transform: rotateX(90deg) translateZ(200px);
+    background-color: rgba(9, 9, 78, 0.7);
+    /* background: black url("../cecile/cecile.png") no-repeat center center; */
+    /* background-size: cover; */
+}
+
+div#face_bas {
+    transform: rotateX(-90deg) translateZ(200px);
+    background-color: rgba(124, 24, 170, 0.5);
+    background: black url("../cecile/cecile.png") no-repeat center center;
+    background-size: cover;
+}
+.bibi {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1.5em;
+    line-height: 2em;
+    padding: 1em;
+}
