@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <nav id="return_home">
+    <!-- <nav id="return_home">
         <a href="../accueil.html">Accueil</a>
-    </nav>
+    </nav> -->
 
     <h1>Rubik's menu</h1>
     <h2>Choisissez un des liens ci-dessous</h2>
@@ -21,40 +21,71 @@
     <div id="laScene">
 
         <ul class="them-links">
-            <li class="link-bibi">Bibi</li>
-            <li class="link-cecile">Cécile</li>
-            <li class="link-devon">Devon</li>
-            <li class="link-joyce">Joyce</li>
-            <li class="link-mathieu">Mathieu</li>
-            <li class="link-morghan">Morghan</li>
+            <li class="link-bibi" id="bibi"><img src="ressources/icons/house.png" alt="" style="height: 1.5em; color: white;"> Home</li>
+            <li class="link-cecile" id="cecile">Cécile</li>
+            <li class="link-devon" id="devon">Devon</li>
+            <li class="link-joyce" id="joyce">Joyce</li>
+            <li class="link-mathieu" id="mathieu">Mathieu</li>
+            <li class="link-morghan" id="morghan">Morghan</li>
         </ul>
 
         <div id="leCube">
-            <div id="face_avant">
+            <div id="face_avant" class="bibi">
+                <p>&mdash;Apporte moi une bière s.t.p</p>
+                <P style="text-indent: 2em;">&mdash;Non</P>
+                <p>&mdash;<span style="color: rgb(221, 255, 98);">sudo</span> Apporte moi une bière</p>
+                <P style="text-indent: 2em;">&mdash;Ok</P>
             </div>
 
-            <div id="face_arriere">
+            <div id="face_arriere" class="mathieu">
             </div>
 
-            <div id="face_gauche">
+            <div id="face_gauche" class="devon">
             </div>
 
             <div id="face_droite" class="cecile">
             </div>
             
-            <div id="face_haut" class="bibi">
-                    <p>&mdash;Sers moi une bière S.T.P</p>
-                    <P style="text-indent: 2em;">&mdash;Non</P>
-                    <p>&mdash;<span style="color: rgb(221, 255, 98);">sudo</span> Sers moi une bière</p>
-                    <P style="text-indent: 2em;">&mdash;Ok</P>
+            <div id="face_haut" class="morghan">
             </div>
-
-            <div id="face_bas">
+            
+            <div id="face_bas" class="joyce">
             </div>
 
         </div>
     </div>
     <p style="font-size: .4em; text-align: right; padding: 2em;">_____/ petit<span style="font-size: 1.2em;">©</span>hapeau \_____</p>
+
+
+    <script src="ressources/js/script.js"></script>
+
+    <script type="text/javascript">
+
+        var leCube = document.getElementById('leCube');
+
+        // var tableau_liens = [bibi, cecile, devon, joyce, mathieu, morghan];
+
+        var bibi = document.getElementById('bibi');
+        bibi.addEventListener('mouseover', tournerCubeBibi);
+
+        var cecile = document.getElementById('cecile');
+        cecile.addEventListener('mouseover', tournerCubeCecile);
+
+        var devon = document.getElementById('devon');
+        devon.addEventListener('mouseover', tournerCubeDevon);
+
+        var joyce = document.getElementById('joyce');
+        joyce.addEventListener('mouseover', tournerCubeJoyce);
+
+        var mathieu = document.getElementById('mathieu');
+        mathieu.addEventListener('mouseover', tournerCubeMathieu);
+
+        var morghan = document.getElementById('morghan');
+        morghan.addEventListener('mouseover', tournerCubeMorghan);
+
+  
+
+    </script>
 
 
     
