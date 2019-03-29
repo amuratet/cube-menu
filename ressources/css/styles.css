@@ -36,15 +36,18 @@ body {
 
 h1 {
     position: relative;
+    letter-spacing: .3rem;
     margin-top: 1rem;
     padding: 0;
-    font: small-caps 3em "ubuntu title", sans-serif, serif;
+    font: small-caps 3em "aguafina regular", "ubuntu title", sans-serif, serif;
     text-align: center;
+    color: #ddd;
+    text-shadow: 1px 1px 1px #111, -1px 1px 1px #111, 1px -1px 1px #111, -1px -1px 1px #111;
 }
 h1::first-letter {
     font: bold 1.5em great-vibes, serif;
     margin-right: .1em;
-    text-shadow: 4px 4px 2px #114e94;
+    text-shadow: 1px 1px 1px #111, -1px 1px 1px #111, 1px -1px 1px #111, -1px -1px 1px #111, 4px 4px 4px #114e94;
 }
 h2 {
     font: 2em "ubuntu light", sans-serif, serif;
