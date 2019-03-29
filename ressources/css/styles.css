@@ -24,11 +24,14 @@ body, nav, div, p, h1, h2, h3, ul, li {
     padding: 0;
     box-sizing: border-box;
 }
+html {
+
+}
 body {
     font-family: "ubuntu regular", sans-serif, serif;
     /* background-color: #ddd; */
-    background: linear-gradient(to bottom right, rgba(26, 42, 108, 0.507), rgba(178, 31, 31, 0.651), rgba(253, 187, 45, 0.664)), url("../patterns/qbkls.png");
     color: #000;
+    background: linear-gradient(to bottom right, rgba(26, 42, 108, 0.507), rgba(178, 31, 31, 0.651), rgba(253, 187, 45, 0.664)), url("../patterns/qbkls.png");
 }
 
 h1 {

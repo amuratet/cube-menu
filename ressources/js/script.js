@@ -61,7 +61,7 @@ function site_devon() {
 }
 
 function site_joyce() {
-    window.location.assign("");
+    window.location.assign("https://jflorent9.github.io/agence-voyage/");
 }
 
 function site_mathieu() {

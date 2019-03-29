@@ -13,6 +13,7 @@ div#laScene {
     /* justify-content: center; */
     display: flex;
     flex-flow: row nowrap;
+    cursor: url(../cursors/rubik.png) 1 1, pointer;
 }
 
 ul.them-links {
@@ -27,7 +28,6 @@ ul.them-links {
 }
 ul.them-links:hover {
     /* cursor: url(../cursors/Cube.cur), pointer; */
-    cursor: url(../cursors/rubik.png) 1 1, pointer;
 }
 ul.them-links li {
     z-index: 10;
