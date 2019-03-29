@@ -50,6 +50,28 @@ function clicCubeMorgan() {
     leCube.style.transform = "rotate3d(-1, 0, 0, 90deg) translateY(-450px)";
 }
 
+///////////////////////////////////////////////////
+
+function site_cecile() {
+    window.location.assign("https://mii-mi.github.io/revolution/");
+}
+
+function site_devon() {
+    window.location.assign("https://cubikbank.netlify.com/");
+}
+
+function site_joyce() {
+    window.location.assign("");
+}
+
+function site_mathieu() {
+    window.location.assign("https://arvolleyv4.netlify.com/");
+}
+
+function site_morghan() {
+    window.location.assign("http://192.168.1.86/linux-powah/linux-temp1.0/linux-template1.0/");
+}
+
 
 
 

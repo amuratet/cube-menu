@@ -25,6 +25,10 @@ ul.them-links {
     flex-flow: column nowrap;
     justify-content: center;
 }
+ul.them-links:hover {
+    /* cursor: url(../cursors/Cube.cur), pointer; */
+    cursor: url(../cursors/rubik.png) 1 1, pointer;
+}
 ul.them-links li {
     z-index: 10;
     transition: .5s;
@@ -37,7 +41,7 @@ ul.them-links li {
     margin: .2rem;
     border: 1px solid black;
     border-radius: 5px;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 1.5em;
     letter-spacing: .1em;
     color: #5a80c7;
@@ -52,10 +56,7 @@ ul.them-links li:hover {
 /* ==========================================
 Animation cube with guys-links :hover
 ========================================== */
-/* .link-bibi:hover #leCube {
-    transform: rotateX(22deg) rotateY(22deg);
-    display: none;
-} */
+
 
 
 div#leCube {
@@ -102,23 +103,27 @@ div#face_avant {
     transform: rotateY(0deg) translateZ(200px);
     /* background: black url("../Bibi/come2.png") no-repeat center center; */
     /* background-size: cover; */
+    color: #ddd;
+}
+div#face_avant:hover {
+    cursor: url(../cursors/beer.png), pointer;
 }
 .bibi {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
-    background-color: rgba(9, 9, 78, 0.9);
+    /* background-color: rgba(212, 107, 8, 0.7); */
+    background: linear-gradient(to bottom right, rgba(145, 2, 2, 0.9), rgba(6, 45, 102, 0.9));
+    /* background: url("../devon/devon1.png"); */
+    /* opacity: .5; */
     font-size: 1.5em;
     line-height: 2em;
     padding: 1em;
+    /* color: white; */
 }
-/* #face_avant img { */
-    /* width: 100%; */
-    /* height: 100%; */
-    /* left: 0; */
-    /* } */
-    
+
+ 
 
 /* =========================================
 PLACEMENTS FACES + IMAGES
@@ -128,8 +133,11 @@ div#face_arriere {
     transform: rotateY(180deg) translateZ(200px);
 }
 .mathieu {
-    background: black url("../mathieu/mat-test.png") no-repeat center center;
+    background: black url("../mathieu/mathieu.png") no-repeat center center;
     background-size: cover;
+}
+.mathieu:hover {
+    cursor: url(../cursors/gremlin.png), pointer;
 }
 
 
@@ -140,6 +148,9 @@ div#face_gauche {
     background: black url("../devon/devon1.png") no-repeat center center;
     background-size: cover;
 }
+.devon:hover {
+    cursor: url(../cursors/sonic.png), pointer;
+}
 
 
 div#face_droite {
@@ -149,14 +160,20 @@ div#face_droite {
     background: black url("../cecile/cecile2.png") no-repeat center center;
     background-size: cover;
 }
+.cecile:hover {
+    cursor: url(../cursors/pinocchio.png), pointer;
+}
 
 
 div#face_haut {
     transform: rotateX(90deg) translateZ(200px);
 }
 .morghan {
-    background: black url("../morghan/morghan2.png") no-repeat top center;
+    background: black url("../morghan/morghan.png") no-repeat top center;
     background-size: cover;
+}
+.morghan:hover {
+    cursor: url(../cursors/linux.png), pointer;
 }
 
 
@@ -164,6 +181,9 @@ div#face_bas {
     transform: rotateX(-90deg) translateZ(200px);
 }
 .joyce {
-    background: black url("../joyce/joyce-test.png") no-repeat top center;
+    background: black url("../joyce/joyce.png") no-repeat top center;
     background-size: cover;
+}
+.joyce:hover {
+    cursor: url(../cursors/plane.png), pointer;
 }

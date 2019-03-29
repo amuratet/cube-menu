@@ -16,24 +16,24 @@
     </nav> -->
 
     <h1>Rubik's menu</h1>
-    <h2>Choisissez un des liens ci-dessous</h2>
+    <h2>Surfez sur les liens ci-dessous</h2>
 
     <div id="laScene">
 
         <ul class="them-links">
-            <li class="link-bibi" id="bibi"><img src="ressources/icons/house.png" alt="" style="height: 1.5em; color: white;"> Home</li>
+            <li class="link-bibi" id="bibi"><img src="ressources/icons/house.png" alt="" style="height: 1.5em;"> Home</li>
             <li class="link-cecile" id="cecile">Cécile</li>
             <li class="link-devon" id="devon">Devon</li>
             <li class="link-joyce" id="joyce">Joyce</li>
             <li class="link-mathieu" id="mathieu">Mathieu</li>
-            <li class="link-morghan" id="morghan">Morghan</li>
+            <li class="link-morghan" id="morghan">Hatcod</li>
         </ul>
 
         <div id="leCube">
             <div id="face_avant" class="bibi">
                 <p>&mdash;Apporte moi une bière s.t.p</p>
                 <P style="text-indent: 2em;">&mdash;Non</P>
-                <p>&mdash;<span style="color: rgb(221, 255, 98);">sudo</span> Apporte moi une bière</p>
+                <p>&mdash;<span style="color: rgb(210, 253, 55);">sudo</span> Apporte moi une bière</p>
                 <P style="text-indent: 2em;">&mdash;Ok</P>
             </div>
 
@@ -82,6 +82,30 @@
 
         var morghan = document.getElementById('morghan');
         morghan.addEventListener('mouseover', tournerCubeMorghan);
+
+        //////////////////////////////////////////////////////////
+
+        var page_bibi = document.getElementById('face_avant');
+        page_bibi.addEventListener('click', changeTexteBibi);
+        function changeTexteBibi() {
+            page_bibi.innerHTML = "Non, non.<br>Tout ce que je demande, c'est :<br>&mdash;une bière<br>&mdash;un burger.";
+        }
+
+        var page_cecile = document.getElementById('face_droite');
+        page_cecile.addEventListener('click', site_cecile);
+
+        var page_devon = document.getElementById('face_gauche');
+        page_devon.addEventListener('click', site_devon);
+        
+        var page_joyce = document.getElementById('face_bas');
+        page_joyce.addEventListener('click', site_joyce);
+
+        var page_mathieu = document.getElementById('face_arriere');
+        page_mathieu.addEventListener('click', site_mathieu);
+
+        var page_morghan = document.getElementById('face_haut');
+        page_morghan.addEventListener('click', site_morghan);
+
 
   
 

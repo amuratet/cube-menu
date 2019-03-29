@@ -27,7 +27,7 @@ body, nav, div, p, h1, h2, h3, ul, li {
 body {
     font-family: "ubuntu regular", sans-serif, serif;
     /* background-color: #ddd; */
-    background: #ddd url("../patterns/qbkls.png");
+    background: linear-gradient(to bottom right, rgba(26, 42, 108, 0.507), rgba(178, 31, 31, 0.651), rgba(253, 187, 45, 0.664)), url("../patterns/qbkls.png");
     color: #000;
 }
 
@@ -44,12 +44,13 @@ h1::first-letter {
     text-shadow: 4px 4px 2px #114e94;
 }
 h2 {
-    font: 1.5em "ubuntu light", sans-serif, serif;
+    font: 2em "ubuntu light", sans-serif, serif;
     letter-spacing: 2px;
     text-indent: 20%;
     margin: 0 0 1em 0;
     padding: 0;
     animation: letterSpacingH2 ease-in-out 5s infinite;
+    text-shadow: 2px 2px 2px black;
 }
 nav#accueil {
     padding-left: 2%;
@@ -115,17 +116,24 @@ h1>span.spanArinfo {
         letter-spacing: 2px;
         color: #000;
     }
-    65% {
+    50% {
         letter-spacing: 2px;
         color: #000;
+    }
+    65% {
+        letter-spacing: 2px;
+        color: rgb(61, 0, 131);
+        text-shadow: 2px 2px 2px rgb(61, 0, 131);
     }
     80% {
         letter-spacing: 5px;
         color: rgba(0, 0, 0, 0);
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
     }
     90% {
         color: rgba(0, 0, 0, 0);
         letter-spacing: 2px;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
     }
     100% {
         letter-spacing: 2px;
