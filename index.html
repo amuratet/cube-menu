@@ -88,28 +88,73 @@
         var page_bibi = document.getElementById('face_avant');
         page_bibi.addEventListener('click', changeTexteBibi);
         function changeTexteBibi() {
-            page_bibi.innerHTML = "<br>&mdash;une bière<br>&mdash;un burger<br>&mdash;un chown 777<br>...Kernel Panic...<br>...Adieu, maître...";
+            page_bibi.innerHTML = "Master, I am here to serve you";
         }
 
-        var page_cecile = document.getElementById('face_droite');
-        page_cecile.addEventListener('click', site_cecile);
+        // var page_cecile = document.getElementById('face_droite');
+        // page_cecile.addEventListener('click', site_cecile);
 
-        var page_devon = document.getElementById('face_gauche');
-        page_devon.addEventListener('click', site_devon);
+        // var page_devon = document.getElementById('face_gauche');
+        // page_devon.addEventListener('click', site_devon);
         
-        var page_joyce = document.getElementById('face_bas');
-        page_joyce.addEventListener('click', site_joyce);
+        // var page_joyce = document.getElementById('face_bas');
+        // page_joyce.addEventListener('click', site_joyce);
 
-        var page_mathieu = document.getElementById('face_arriere');
-        page_mathieu.addEventListener('click', site_mathieu);
+        // var page_mathieu = document.getElementById('face_arriere');
+        // page_mathieu.addEventListener('click', site_mathieu);
 
-        var page_morghan = document.getElementById('face_haut');
-        page_morghan.addEventListener('click', site_morghan);
+        // var page_morghan = document.getElementById('face_haut');
+        // page_morghan.addEventListener('click', site_morghan);
 
-
-  
-
-    </script>
+ 
+        window.addEventListener('load', function(){
+         
+            var touchsurface = document.getElementById('leCube'),
+                startX,
+                startY,
+                dist,
+                threshold = 150, //required min distance traveled to be considered swipe
+                allowedTime = 200, // maximum time allowed to travel that distance
+                elapsedTime,
+                startTime
+         
+            function handleswipe(isrightswipe){
+                if (isrightswipe) {
+                    tournerCubeCecile()
+                    // leCube.innerHTML = 'Congrats, you\'ve made a <span style="color:red">right swipe!</span>'
+                }
+                else{
+                    tournerCubeJoyce()
+                    // leCube.innerHTML = 'Condition for right swipe not met yet'
+                }
+            }
+         
+            touchsurface.addEventListener('touchstart', function(e){
+                // touchsurface.innerHTML = 'TEST TEST'
+                var touchobj = e.changedTouches[0]
+                dist = 0
+                startX = touchobj.pageX
+                startY = touchobj.pageY
+                startTime = new Date().getTime() // record time when finger first makes contact with surface
+                e.preventDefault()
+            }, false)
+         
+            touchsurface.addEventListener('touchmove', function(e){
+                e.preventDefault() // prevent scrolling when inside DIV
+            }, false)
+         
+            touchsurface.addEventListener('touchend', function(e){
+                var touchobj = e.changedTouches[0]
+                dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
+                elapsedTime = new Date().getTime() - startTime // get time elapsed
+                // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
+                var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
+                handleswipe(swiperightBol)
+                e.preventDefault()
+            }, false)
+         
+        }, false) // end window.onload
+        </script>
 
 
     
