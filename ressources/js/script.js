@@ -1,26 +1,33 @@
 function tournerCubeBibi() {
+    positionActuelle = 0;
     leCube.style.transform = "translateZ(450px)";
 }
 
-function tournerCubeCecile() {
-    leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)";
-}
 
 function tournerCubeDevon() {
+    positionActuelle = 1;
     leCube.style.transform = "rotate3d(-0.1, 1, -0.1, 105deg)";
+}
+function tournerCubeCecile() {
+    positionActuelle = 2;
+    leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)";
+    clicCubeCecile()
+}
+
+function tournerCubeMorghan() {
+    positionActuelle = 3;
+    leCube.style.transform = "rotate3d(-1, -0.15, -0.15, 105deg)";
 }
 
 function tournerCubeJoyce() {
+    positionActuelle = 4;
     leCube.style.transform = "rotate3d(1, 0.15, -0.15, 105deg)";
 }
 
 function tournerCubeMathieu() {
+    positionActuelle = 5;
     leCube.style.transform = "rotate3d(-0, 1, -0.1, 195deg)";
     // leCube.style.transform = "rotate3d(0, 1, 0, 180deg)";
-}
-
-function tournerCubeMorghan() {
-    leCube.style.transform = "rotate3d(-1, -0.15, -0.15, 105deg)";
 }
 
 
