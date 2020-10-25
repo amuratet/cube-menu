@@ -66,7 +66,7 @@
 
         var faceAffichee = document.getElementById("faAff")
 
-        // ================================ AVEC DES CHIFFRES ==================================
+        // ================================ AVEC DES CHIFFRES (FONCTIONNE OK)==================================
         // let positionActuelle = 0
         // const tournerGauche = {0:1, 1:5, 2:0, 3:1, 4:1, 5:2}
         // const tournerDroite = {0:2, 1:0, 2:5, 3:2, 4:2, 5:1}
@@ -99,33 +99,42 @@
         // }
 
         // ================================ AVEC DES MOTS ==================================
+        const goCenter = () => {}
+        const goLeft   = () => {alert("coucou")}
+        const goRight  = () => {}
+        const goUp     = () => {}
+        const goDown   = () => {}
+        const goRear   = () => {}
         let positionActuelle = "centre"
         // depuis la position X : nouvelle face => Y
-        const tournerGauche = {"centre":"gauche",   "gauche":"arriere", "droite":"centre",  "haut":"gauche",  "bas":"gauche",  "arriere":"droite"}
-        const tournerDroite = {"centre":"droite",   "gauche":"centre",  "droite":"arriere", "haut":"droite",  "bas":"droite",  "arriere":"gauche"}
-        const tournerHaut   = {"centre":"haut",     "gauche":"haut",    "droite":"haut",    "haut":"arriere", "bas":"centre",  "arriere":"haut"}
-        const tournerBas    = {"centre":"bas",      "gauche":"bas",     "droite":"bas",     "haut":"centre",  "bas":"arriere", "arriere":"bas"}
+        const toLeft   = {"centre":{dir:"gauche", mvt: goLeft}, "gauche":{dir:"arriere", mvt: goRight}, "droite":{dir:"centre", mvt:goCenter},  "haut":{dir:"gauche", mvt:goLeft},  "bas":{dir:"gauche",mvt:goLeft},  "arriere":{dir:"droite",mvt:goRight}}
+        const toRight  = {"centre":"droite",   "gauche":"centre",   "droite":"arriere", "haut":"droite",  "bas":"droite",  "arriere":"gauche"}
+        const toUp     = {"centre":"haut",     "gauche":"haut",     "droite":"haut",    "haut":"arriere", "bas":"centre",  "arriere":"haut"}
+        const toBottom = {"centre":"bas",      "gauche":"bas",      "droite":"bas",     "haut":"centre",  "bas":"arriere", "arriere":"bas"}
 
         console.log("Position de départ : " + positionActuelle)
 
         function vaGauche() {
-            positionActuelle = tournerGauche[positionActuelle]
+            var aGauche = toLeft[positionActuelle].mvt
+            positionActuelle = toLeft[positionActuelle].dir// Ça fonctionne
             faceAffichee.innerHTML = positionActuelle.toUpperCase()
+            aGauche() // pour faire tourner le cube
         }
         function vaDroite() {
-            positionActuelle = tournerDroite[positionActuelle]
+            positionActuelle = toRight[positionActuelle]
             faceAffichee.innerHTML = positionActuelle.toUpperCase()
         }
         function vaHaut() {
-            positionActuelle = tournerHaut[positionActuelle]
+            positionActuelle = toUp[positionActuelle]
             faceAffichee.innerHTML = positionActuelle.toUpperCase()
         }
         function vaBas() {
-            positionActuelle = tournerBas[positionActuelle]
+            positionActuelle = toBottom[positionActuelle]
             faceAffichee.innerHTML = positionActuelle.toUpperCase()
         }
 
 
+        // =========================== NE FONCTIONNE PAS ============================
         // var goGauche    = (pos) => {faceAffichee.innerHTML = "GAUCHE"}
         // var goDroite    = (pos) => {faceAffichee.innerHTML = "DROITE"}
         // var goHaut      = (pos) => {faceAffichee.innerHTML = "HAUT"}
