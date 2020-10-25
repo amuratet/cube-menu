@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemple de HTML</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    padding: 10% 0 0 0;
+    background-color: #413a33;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.bouton {
+    background-color: #201810;
+    border: 2px solid #e29494;
+    border-radius: .5em;
+    padding: 2em 0;
+    width: 5em;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+.faceAffichee {
+    background-color: #201810;
+    border: 2px solid #e29494;
+    border-radius: .5em;
+    padding: 5em 0;
+    width: 12em;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 1em;
+}
+.etage {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="etage">
+        <p class="bouton" id="boutonHaut">HAUT</p>
+    </div>
+
+    <div class="etage">
+        <p class="bouton" id="boutonGauche">GAUCHE</p>
+        <p class="faceAffichee" id="faAff">CENTRE</p>
+        <p class="bouton" id="boutonDroite">DROITE</p>
+    </div>
+
+    <div class="etage">
+        <p class="bouton" id="boutonBas">BAS</p>
+    </div>
+
+    <script>
+        
+        var allerGauche = document.getElementById('boutonGauche').addEventListener("click", vaGauche)
+        var allerDroite = document.getElementById('boutonDroite').addEventListener("click", vaDroite)
+        var allerHaut   = document.getElementById('boutonHaut'  ).addEventListener("click", vaHaut)
+        var allerBas    = document.getElementById('boutonBas'   ).addEventListener("click", vaBas)
+
+        var faceAffichee = document.getElementById("faAff")
+
+        // ================================ AVEC DES CHIFFRES ==================================
+        // let positionActuelle = 0
+        // const tournerGauche = {0:1, 1:5, 2:0, 3:1, 4:1, 5:2}
+        // const tournerDroite = {0:2, 1:0, 2:5, 3:2, 4:2, 5:1}
+        // const tournerHaut   = {0:3, 1:3, 2:3, 3:5, 4:0, 5:3}
+        // const tournerBas    = {0:4, 1:4, 2:4, 3:0, 4:5, 5:4}
+
+        // function vaGauche() {
+        //     let text = "FACE : " + tournerGauche[positionActuelle]
+        //     positionActuelle = tournerGauche[positionActuelle]
+        //     faceAffichee.innerHTML = text
+        //     console.log("nvlle position : " + positionActuelle)
+        // }
+        // function vaDroite() {
+        //     let text = "FACE : " + tournerDroite[positionActuelle]
+        //     positionActuelle = tournerDroite[positionActuelle]
+        //     faceAffichee.innerHTML = text
+        //     console.log("nvlle position : " + positionActuelle)
+        // }
+        // function vaHaut() {
+        //     let text = "FACE : " + tournerHaut[positionActuelle]
+        //     positionActuelle = tournerHaut[positionActuelle]
+        //     faceAffichee.innerHTML = text
+        //     console.log("nvlle position : " + positionActuelle)
+        // }
+        // function vaBas() {
+        //     let text = "FACE : " + tournerBas[positionActuelle]
+        //     positionActuelle = tournerBas[positionActuelle]
+        //     faceAffichee.innerHTML = text
+        //     console.log("nvlle position : " + positionActuelle)
+        // }
+
+        // ================================ AVEC DES MOTS ==================================
+        let positionActuelle = "centre"
+        // depuis la position X : nouvelle face => Y
+        const tournerGauche = {"centre":"gauche",   "gauche":"arriere", "droite":"centre",  "haut":"gauche",  "bas":"gauche",  "arriere":"droite"}
+        const tournerDroite = {"centre":"droite",   "gauche":"centre",  "droite":"arriere", "haut":"droite",  "bas":"droite",  "arriere":"gauche"}
+        const tournerHaut   = {"centre":"haut",     "gauche":"haut",    "droite":"haut",    "haut":"arriere", "bas":"centre",  "arriere":"haut"}
+        const tournerBas    = {"centre":"bas",      "gauche":"bas",     "droite":"bas",     "haut":"centre",  "bas":"arriere", "arriere":"bas"}
+
+        console.log("Position de départ : " + positionActuelle)
+
+        function vaGauche() {
+            positionActuelle = tournerGauche[positionActuelle]
+            faceAffichee.innerHTML = positionActuelle.toUpperCase()
+        }
+        function vaDroite() {
+            positionActuelle = tournerDroite[positionActuelle]
+            faceAffichee.innerHTML = positionActuelle.toUpperCase()
+        }
+        function vaHaut() {
+            positionActuelle = tournerHaut[positionActuelle]
+            faceAffichee.innerHTML = positionActuelle.toUpperCase()
+        }
+        function vaBas() {
+            positionActuelle = tournerBas[positionActuelle]
+            faceAffichee.innerHTML = positionActuelle.toUpperCase()
+        }
+
+
+        // var goGauche    = (pos) => {faceAffichee.innerHTML = "GAUCHE"}
+        // var goDroite    = (pos) => {faceAffichee.innerHTML = "DROITE"}
+        // var goHaut      = (pos) => {faceAffichee.innerHTML = "HAUT"}
+        // var goBas       = (pos) => {faceAffichee.innerHTML = "BAS"}
+        // var goCentre    = (pos) => {faceAffichee.innerHTML = "CENTRE"}
+        
+        // var faceCentre  = [goGauche,    goDroite,   goHaut,     goBas]
+        // var faceGauche  = [goArriere,   goCentre,   goHaut,     goBas]
+        // var faceDroite  = [goCentre,    goArriere,  goHaut,     goBas]
+        // var faceHaut    = [goGauche,    goDroite,   goArriere,  goCentre]
+        // var faceBas     = [goGauche,    goDroite,   goCentre,   goArriere]
+        // var faceArriere = [goDroite,    goGauche,   goHaut,     goBas]
+
+        // var pos = [faceCentre,faceGauche,faceDroite,faceHaut,faceBas,faceArriere]
+        // var posActuelle = pos[0]
+
+        // var tourner = {
+        //     positionActuelle: posActuelle,
+        //     faceAffichee: pos[0]
+        // }
+
+
+        // function partiGauche() {
+        //     faceCentre.innerHTML = "GAUCHE"
+        // }
+        // function partiDroite() {
+        //     faceCentre.innerHTML = "DROITE"
+        // }
+        // function partiHaut() {
+        //     faceCentre.innerHTML = "HAUT"
+        // }
+        // function partiBas() {
+        //     faceCentre.innerHTML = "BAS"
+        // }
+    </script>
+
+</body>
+
+</html>
