@@ -63,7 +63,7 @@
     <script src="ressources/js/script.js"></script>
 
     <script type="text/javascript">
-        var positionActuelle = 0
+        // var positionActuelle = 0
         // const faceAvant = 0
         // const faceGauche = 1
         // const faceDroite = 2
@@ -71,22 +71,22 @@
         // const faceBas = 4
         // const faceArriere = 5;
 
-        const faceAvant = [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMorghan(), tournerCubeJoyce()]
-        const faceGauche = [tournerCubeMathieu(), tournerCubeBibi(), tournerCubeMorghan(), tournerCubeJoyce()]
-        const faceDroite = [tournerCubeBibi(), tournerCubeMathieu(),tournerCubeMorghan(), tournerCubeJoyce()]
-        const faceHaut = [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMathieu(),  tournerCubeBibi()]
-        const faceBas = [tournerCubeDevon(), tournerCubeCecile(),  tournerCubeBibi(), tournerCubeMathieu()]
-        const faceArriere = [tournerCubeCecile(),tournerCubeDevon(), tournerCubeMorghan(), tournerCubeJoyce()]
-        const lesFaces = [faceAvant,faceGauche,faceDroite,faceHaut,faceBas,faceArriere];
+        // const faceAvant = [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMorghan(), tournerCubeJoyce()]
+        // const faceGauche = [tournerCubeMathieu(), tournerCubeBibi(), tournerCubeMorghan(), tournerCubeJoyce()]
+        // const faceDroite = [tournerCubeBibi(), tournerCubeMathieu(),tournerCubeMorghan(), tournerCubeJoyce()]
+        // const faceHaut = [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMathieu(),  tournerCubeBibi()]
+        // const faceBas = [tournerCubeDevon(), tournerCubeCecile(),  tournerCubeBibi(), tournerCubeMathieu()]
+        // const faceArriere = [tournerCubeCecile(),tournerCubeDevon(), tournerCubeMorghan(), tournerCubeJoyce()]
+        // const lesFaces = [faceAvant,faceGauche,faceDroite,faceHaut,faceBas,faceArriere];
 
-        const tourner = {
-            // faceAvant : [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMorghan(), tournerCubeJoyce()]
-            // faceGauche : [tournerCubeMathieu(), tournerCubeBibi(), tournerCubeMorghan(), tournerCubeJoyce()]
-            // faceDroite : [tournerCubeBibi(), tournerCubeMathieu(),tournerCubeMorghan(), tournerCubeJoyce()]
-            // faceHaut : [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMathieu(),  tournerCubeBibi()]
-            // faceBas : [tournerCubeDevon(), tournerCubeCecile(),  tournerCubeBibi(), tournerCubeMathieu()]
-            // faceArriere : [tournerCubeCecile(),tournerCubeDevon(), tournerCubeMorghan(), tournerCubeJoyce()]
-        }
+        // const tourner = {
+        // faceAvant : [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMorghan(), tournerCubeJoyce()]
+        // faceGauche : [tournerCubeMathieu(), tournerCubeBibi(), tournerCubeMorghan(), tournerCubeJoyce()]
+        // faceDroite : [tournerCubeBibi(), tournerCubeMathieu(),tournerCubeMorghan(), tournerCubeJoyce()]
+        // faceHaut : [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMathieu(),  tournerCubeBibi()]
+        // faceBas : [tournerCubeDevon(), tournerCubeCecile(),  tournerCubeBibi(), tournerCubeMathieu()]
+        // faceArriere : [tournerCubeCecile(),tournerCubeDevon(), tournerCubeMorghan(), tournerCubeJoyce()]
+        // }
 
         // const tourner = {
         //     faceAvant : [tournerCubeDevon(), tournerCubeCecile(), tournerCubeMorghan(), tournerCubeJoyce()],
@@ -193,7 +193,44 @@
 
         /*================================================================================*/
 
-        
+
+        // ================================ AVEC DES MOTS ==================================
+        let positionActuelle = "centre"
+        console.log("Position de départ : " + positionActuelle)
+
+        const goCenterFace = () => { leCube.style.transform = "translateZ(450px)"; }
+        const goLeftFace = () => { leCube.style.transform = "rotate3d(-0.1, 1, -0.1, 105deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
+        const goRightFace = () => { leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
+        const goUpFace = () => { leCube.style.transform = "rotate3d(-1, -0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(-1, 0, 0, 90deg) translateY(-450px)"; }
+        const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(1, 0, 0, 90deg) translateY(450px)"; }
+        const goRearFace = () => { leCube.style.transform = "rotate3d(-0, 1, -0.1, 195deg)"; leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
+        // depuis la position X : nouvelle face => Y
+        const toLeft = { "centre": { dir: "gauche", mvt: goLeftFace }, "gauche": { dir: "arriere", mvt: goRightFace }, "droite": { dir: "centre", mvt: goCenterFace }, "haut": { dir: "gauche", mvt: goLeftFace }, "bas": { dir: "gauche", mvt: goLeftFace }, "arriere": { dir: "droite", mvt: goRightFace } }
+        const toRight = { "centre": {dir: "droite", mvt: goRightFace }, "gauche": { dir: "centre", mvt: goCenterFace }, "droite": { dir: "arriere", mvt: goRearFace }, "haut": { dir: "droite", mvt: goRightFace }, "bas": { dir: "droite", mvt: goRightFace }, "arriere": { dir: "gauche", mvt: goLeftFace } }
+        const toUp = { "centre": {dir: "haut", mvt: goUpFace }, "gauche": {dir: "haut", mvt: goUpFace }, "droite": {dir: "haut", mvt: goUpFace }, "haut": { dir: "arriere", mvt: goRearFace }, "bas": { dir: "centre", mvt: goCenterFace }, "arriere": {dir: "haut", mvt: goUpFace } }
+        const toBottom = { "centre": {dir: "bas", mvt: goBottomFace}, "gauche": {dir: "bas", mvt: goBottomFace}, "droite": {dir: "bas", mvt: goBottomFace}, "haut": { dir: "centre", mvt: goCenterFace }, "bas": { dir: "arriere", mvt: goRearFace }, "arriere": {dir: "bas", mvt: goBottomFace} }
+
+        function vaGauche() {
+            var aGauche = toLeft[positionActuelle].mvt
+            positionActuelle = toLeft[positionActuelle].dir// Ça fonctionne
+            aGauche()
+        }
+        function vaDroite() {
+            var aDroite = toRight[positionActuelle].mvt
+            positionActuelle = toRight[positionActuelle].dir
+            aDroite()
+        }
+        function vaHaut() {
+            var enHaut = toUp[positionActuelle].mvt
+            positionActuelle = toUp[positionActuelle].dir
+            enHaut()
+        }
+        function vaBas() {
+            var enBas = toBottom[positionActuelle].mvt
+            positionActuelle = toBottom[positionActuelle].dir
+            enHaut()
+        }
+
         window.addEventListener('load', function () {
             var el = document.getElementById('laScene')
             // var inner = document.getElementById('inner')
@@ -247,10 +284,10 @@
                 if (elapsedTime <= allowedTime) { // first condition for awipe met
                     if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
                         // swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-                        swipedir = (distX < 0) ? lesFaces[positionActuelle][1] : lesFaces[positionActuelle][1] // if dist traveled is negative, it indicates left swipe
+                        swipedir = (distX < 0) ? vaGauche() : vaDroite() // if dist traveled is negative, it indicates left swipe
                     }
                     else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
-                        swipedir = (distY < 0) ? tournerCubeMathieu() : tournerCubeMorghan() // if dist traveled is negative, it indicates up swipe
+                        swipedir = (distY < 0) ? vaHaut() : vaBas() // if dist traveled is negative, it indicates up swipe
                     }
                 }
                 handleswipe(swipedir)
