@@ -1,7 +1,7 @@
 div#laScene {
     border-radius: 10px;
     /* width: 70vw; */
-    height: 750px;
+    /* height: 750px; */
     /* padding: 150px; */
     margin: 0 auto;
     perspective: 2000px;
@@ -135,6 +135,7 @@ div#face_arriere {
 .mathieu {
     background: black url("../mathieu/mathieu.png") no-repeat center center;
     background-size: cover;
+    opacity: .8;
 }
 .mathieu:hover {
     cursor: url(../cursors/gremlin.png), pointer;
@@ -147,6 +148,7 @@ div#face_gauche {
 .devon {
     background: black url("../devon/devon1.png") no-repeat center center;
     background-size: cover;
+    opacity: .8;
 }
 .devon:hover {
     cursor: url(../cursors/sonic.png), pointer;
@@ -159,6 +161,7 @@ div#face_droite {
 .cecile {
     background: black url("../cecile/cecile2.png") no-repeat center center;
     background-size: cover;
+    opacity: .8;
 }
 .cecile:hover {
     cursor: url(../cursors/pinocchio.png), pointer;
@@ -171,6 +174,7 @@ div#face_haut {
 .morghan {
     background: black url("../morghan/morghan.png") no-repeat top center;
     background-size: cover;
+    opacity: .8;
 }
 .morghan:hover {
     cursor: url(../cursors/linux.png), pointer;
@@ -183,6 +187,7 @@ div#face_bas {
 .joyce {
     background: black url("../joyce/joyce.png") no-repeat top center;
     background-size: cover;
+    opacity: .8;
 }
 .joyce:hover {
     cursor: url(../cursors/plane.png), pointer;

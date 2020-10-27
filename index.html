@@ -16,8 +16,8 @@
         <a href="../accueil.html">Accueil</a>
     </nav> -->
 
-    <h1>Demo menu cube</h1>
-    <h2>Surfez sur les liens ci-dessous</h2>
+    <h1 class="titreAccueil">Demo menu cube</h1>
+    <!-- <h2>Surfez sur les liens ci-dessous</h2> -->
 
     <div id="laScene">
 
@@ -83,7 +83,7 @@
         let positionActuelle = "centre"
         console.log("Position de départ : " + positionActuelle)
 
-        const goCenterFace = () => { leCube.style.transform = "translateZ(450px)"; }
+        const goCenterFace = () => { leCube.style.transform = "rotate3d(0, 0, 0, 0deg) translateZ(450px)"; }
         // const goLeftFace = () => { leCube.style.transform = "rotate3d(-0.1, 1, -0.1, 105deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
         const goLeftFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 90deg) translateX(-450px)" }
         // const goRightFace = () => { leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
@@ -94,7 +94,9 @@
         const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0, 0, 90deg) translateY(450px)"; }
         // const goRearFace = () => { leCube.style.transform = "rotate3d(-0, 1, -0.1, 195deg)"; leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
         const goRearFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
-        // depuis la position X : nouvelle face => Y
+
+
+        // depuis la position XX : direction nouvelle face (=dir) => YY  -  mouvement (=mvt) => goYY
         const toLeft = { "centre": { dir: "gauche", mvt: goLeftFace }, "gauche": { dir: "arriere", mvt: goRearFace }, "droite": { dir: "centre", mvt: goCenterFace }, "haut": { dir: "gauche", mvt: goLeftFace }, "bas": { dir: "gauche", mvt: goLeftFace }, "arriere": { dir: "droite", mvt: goRightFace } }
         const toRight = { "centre": {dir: "droite", mvt: goRightFace }, "gauche": { dir: "centre", mvt: goCenterFace }, "droite": { dir: "arriere", mvt: goRearFace }, "haut": { dir: "droite", mvt: goRightFace }, "bas": { dir: "droite", mvt: goRightFace }, "arriere": { dir: "gauche", mvt: goLeftFace } }
         const toUp = { "centre": {dir: "haut", mvt: goUpFace }, "gauche": {dir: "haut", mvt: goUpFace }, "droite": {dir: "haut", mvt: goUpFace }, "haut": { dir: "arriere", mvt: goRearFace }, "bas": { dir: "centre", mvt: goCenterFace }, "arriere": {dir: "haut", mvt: goUpFace } }
@@ -121,7 +123,7 @@
         function vaBas() {
             var enBas = toBottom[positionActuelle].mvt
             positionActuelle = toBottom[positionActuelle].dir
-            enHaut()
+            enBas()
             console.log("direction bas vers la position " + positionActuelle)
         }
 
