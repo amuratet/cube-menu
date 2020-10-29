@@ -152,7 +152,7 @@
                 startY,
                 distX,
                 distY,
-                threshold = 150, //required min distance traveled to be considered swipe
+                threshold = 100, //required min distance traveled to be considered swipe
                 restraint = 100, // maximum distance allowed at the same time in perpendicular direction
                 allowedTime = 300, // maximum time allowed to travel that distance
                 elapsedTime,
@@ -181,10 +181,10 @@
                 if (elapsedTime <= allowedTime) { // first condition for awipe met
                     if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
                         // swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-                        swipedir = (distX < 0) ? vaGauche() : vaDroite() // if dist traveled is negative, it indicates left swipe
+                        swipedir = (distX < 0) ? vaDroite() : vaGauche() // if dist traveled is negative, it indicates left swipe
                     }
                     else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
-                        swipedir = (distY < 0) ? vaHaut() : vaBas() // if dist traveled is negative, it indicates up swipe
+                        swipedir = (distY < 0) ? vaBas() : vaHaut() // if dist traveled is negative, it indicates up swipe
                     }
                 }
                 handleswipe(swipedir)
