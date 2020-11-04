@@ -46,22 +46,22 @@ body {
     text-shadow: 1px 1px 1px #111, -1px 1px 1px #111, 1px -1px 1px #111, -1px -1px 1px #111;
     animation: letterSpacingH2 ease-in-out 5s infinite;
 } */
+h1.titreAccueil {
+    padding: 1em 0 0 1em;
+    /* text-align: center; */
+    font: bold small-caps 2em "aguafina regular", "ubuntu regular", sans-serif, serif;
+    letter-spacing: 5px;
+    /* text-indent: 20%; */
+    /* margin: 0 0 1em 0; */
+    /* animation: letterSpacingH2 ease-in-out 5s infinite; */
+    text-shadow: 2px 2px 2px rgb(59, 41, 219);
+}
 h1::first-letter {
     font: bold 1.5em great-vibes, serif;
     margin-right: .1em;
     text-shadow: 1px 1px 1px #111, -1px 1px 1px #111, 1px -1px 1px #111, -1px -1px 1px #111, 4px 4px 4px #114e94;
 }
-h1.titreAccueil {
-    padding: 1em 0 0 1em;
-    /* text-align: center; */
-    font: bold small-caps 3em "aguafina regular", "ubuntu regular", sans-serif, serif;
-    letter-spacing: 5px;
-    /* text-indent: 20%; */
-    /* margin: 0 0 1em 0; */
-    animation: letterSpacingH2 ease-in-out 5s infinite;
-    text-shadow: 2px 2px 2px rgb(59, 41, 219);
-}
-h2 {
+/* h2 {
     font: 2em "ubuntu light", sans-serif, serif;
     letter-spacing: 2px;
     text-indent: 20%;
@@ -69,7 +69,7 @@ h2 {
     padding: 0;
     animation: letterSpacingH2 ease-in-out 5s infinite;
     text-shadow: 2px 2px 2px black;
-}
+} */
 nav#accueil {
     padding-left: 2%;
     width: 60%;

@@ -1,9 +1,12 @@
 div#laScene {
-    border-radius: 10px;
+    /* height: 450px; */
+    /* width: 80%; */
+    margin: 0 auto;
+    /* border-radius: 10px; */
     /* width: 70vw; */
     /* height: 750px; */
     /* padding: 150px; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     perspective: 2000px;
     /* border: 2px solid rgba(168, 7, 7, 0.425); */
     background-color: rgba(0, 0, 0, 0);
@@ -11,8 +14,8 @@ div#laScene {
     /* overflow: hidden; */
     /* display: flex; */
     /* justify-content: center; */
-    display: flex;
-    flex-flow: row nowrap;
+    /* display: flex; */
+    /* flex-flow: row nowrap; */
     cursor: url(../cursors/rubik.png) 1 1, pointer;
 }
 
@@ -61,15 +64,19 @@ Animation cube with guys-links :hover
 
 div#leCube {
     border-radius: 10px;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     position: relative;
-    top: 120px;
+    /* top: 120px; */
     transform-style: preserve-3d;
     /* transform-origin: center; */
     /* transform: rotateX(0deg) rotateY(0deg); */
     /* transform: rotate3d(1, 1, 0, -18deg); */
-    transform: translateZ(450px);
+    /* ============================================ */
+    /* A MODIFIER AVEC MEDIA QUERIES OU REFLECHIR À UNE VARIABLE EN JS OU TESTER POURCENTAGES */
+    /* transform: translateZ(250px); */
+    /* transform: translateZ(250px); */
+    /* ============================================ */
     transition: 1s;
     margin: 2em auto;
 }
@@ -81,10 +88,10 @@ div#leCube>div {
     border: 5px solid #555;
     transition: 1s;
     border-radius: 5px;
-    /* border: 10px solid red; */
+    /* border: 10px solid rgb(156, 5, 5); */
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     /* backface-visibility: hidden; */
     /* padding: 6px; */
     /* background-color: rgba(255, 255, 255, .1); */
@@ -92,7 +99,7 @@ div#leCube>div {
 div#laScene:hover div#leCube {
     /* transform-origin: center; */
     /* transform: rotateX(-18deg) rotateY(-18deg); */
-    transform: rotate3d(1, 1, 0, -18deg);
+    /* transform: rotate3d(1, 1, 0, -18deg); */
     /* =====================================
     ICI ANIM INFINITE ?
     ===================================== */
@@ -100,7 +107,7 @@ div#laScene:hover div#leCube {
 
 div#face_avant {
     transition: 1s;
-    transform: rotateY(0deg) translateZ(200px);
+    transform: rotateY(0deg) translateZ(150px);
     /* background: black url("../Bibi/come2.png") no-repeat center center; */
     /* background-size: cover; */
     color: #ddd;
@@ -108,19 +115,45 @@ div#face_avant {
 div#face_avant:hover {
     cursor: url(../cursors/beer.png), pointer;
 }
-.bibi {
-    display: flex;
+.menuAccueil {
+    /* display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; */
     /* background-color: rgba(212, 107, 8, 0.7); */
     background: linear-gradient(to bottom right, rgba(145, 2, 2, 0.9), rgba(6, 45, 102, 0.9));
     /* background: url("../devon/devon1.png"); */
     /* opacity: .5; */
     font-size: 1.5em;
     line-height: 2em;
-    padding: 1em;
+    padding: .5em;
     /* color: white; */
+}
+.menuAccueil > .titreFaceMenu {
+    font: 1.5em "ubuntu light", sans-serif, serif;
+    letter-spacing: 2px;
+    /* text-indent: 20%; */
+    /* margin: 0 0 1em 0; */
+    padding: 0;
+    animation: letterSpacingH2 ease-in-out 5s infinite;
+    text-shadow: 2px 2px 2px black;
+}
+.menuAccueil .sousTitreFaceMenu {
+    font-size: .8em;
+}
+.menuAccueil > .faceMenus {
+    display: flex; 
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.menuAccueil > .faceMenus p {
+    border: 1px solid rgb(219, 161, 161);
+    border-radius: .2em;
+    margin: .2em;
+    padding: 0 .2em;
+    background-color: rgb(46, 46, 46);
+    text-align: center;
+    box-shadow: 0px 0px 20px black;
 }
 
  
@@ -130,12 +163,12 @@ PLACEMENTS FACES + IMAGES
 ========================================= */
 
 div#face_arriere {
-    transform: rotateY(180deg) translateZ(200px);
+    transform: rotateY(180deg) translateZ(150px);
 }
 .mathieu {
     background: black url("../mathieu/mathieu.png") no-repeat center center;
     background-size: cover;
-    opacity: .8;
+    /* opacity: .8; */
 }
 .mathieu:hover {
     cursor: url(../cursors/gremlin.png), pointer;
@@ -143,12 +176,12 @@ div#face_arriere {
 
 
 div#face_gauche {
-    transform: rotateY(-90deg) translateZ(200px);
+    transform: rotateY(-90deg) translateZ(150px);
 }
 .devon {
     background: black url("../devon/devon1.png") no-repeat center center;
     background-size: cover;
-    opacity: .8;
+    /* opacity: .8; */
 }
 .devon:hover {
     cursor: url(../cursors/sonic.png), pointer;
@@ -156,12 +189,12 @@ div#face_gauche {
 
 
 div#face_droite {
-    transform: rotateY(90deg) translateZ(200px);
+    transform: rotateY(90deg) translateZ(150px);
 }
 .cecile {
     background: black url("../cecile/cecile2.png") no-repeat center center;
     background-size: cover;
-    opacity: .8;
+    /* opacity: .8; */
 }
 .cecile:hover {
     cursor: url(../cursors/pinocchio.png), pointer;
@@ -169,12 +202,12 @@ div#face_droite {
 
 
 div#face_haut {
-    transform: rotateX(90deg) translateZ(200px);
+    transform: rotateX(90deg) translateZ(150px);
 }
 .morghan {
     background: black url("../morghan/morghan.png") no-repeat top center;
     background-size: cover;
-    opacity: .8;
+    /* opacity: .8; */
 }
 .morghan:hover {
     cursor: url(../cursors/linux.png), pointer;
@@ -182,12 +215,12 @@ div#face_haut {
 
 
 div#face_bas {
-    transform: rotateX(-90deg) translateZ(200px);
+    transform: rotateX(-90deg) translateZ(150px);
 }
 .joyce {
     background: black url("../joyce/joyce.png") no-repeat top center;
     background-size: cover;
-    opacity: .8;
+    /* opacity: .8; */
 }
 .joyce:hover {
     cursor: url(../cursors/plane.png), pointer;

@@ -32,11 +32,18 @@
         </ul> -->
 
         <div id="leCube">
-            <div id="face_avant" class="bibi">
-                <p>&mdash;Va chercher les pizzas s.t.p</p>
+            <div id="face_avant" class="menuAccueil">
+                <!-- <p>&mdash;Va chercher les pizzas s.t.p</p>
                 <P style="text-indent: 2em;">&mdash;Non</P>
                 <p>&mdash;<span style="color: rgb(210, 253, 55);">sudo</span> va chercher les pizzas</p>
-                <P style="text-indent: 2em;">&mdash;Ok</P>
+                <P style="text-indent: 2em;">&mdash;Ok</P> -->
+                <h3 class="titreFaceMenu">U-swap</h3>
+                <p class="sousTitreFaceMenu">Savoir vivre, c'est savoir</p>
+                <div class="faceMenus">
+                    <p>Offrir</p>
+                    <p>Recevoir</p>
+                    <p>Demander</p>
+                </div>
             </div>
 
             <div id="face_arriere" class="mathieu">
@@ -60,7 +67,7 @@
         style="font-size: 1.2em;">©</span>hapeau \_____</p> -->
         
         
-        <script src="ressources/js/script.js"></script>
+        <!-- <script src="ressources/js/script.js"></script> -->
         
         <script type="text/javascript">
        
@@ -83,17 +90,17 @@
         let positionActuelle = "centre"
         console.log("Position de départ : " + positionActuelle)
 
-        const goCenterFace = () => { leCube.style.transform = "rotate3d(0, 0, 0, 0deg) translateZ(450px)"; }
+        const goCenterFace = () => { leCube.style.transform = "rotate3d(0, 0, 0, 0deg)"; }
         // const goLeftFace = () => { leCube.style.transform = "rotate3d(-0.1, 1, -0.1, 105deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
-        const goLeftFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 90deg) translateX(-450px)" }
+        const goLeftFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 90deg)" }
         // const goRightFace = () => { leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
-        const goRightFace = () => { leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
+        const goRightFace = () => { leCube.style.transform = "rotate3d(0, -1, 0, 90deg"; }
         // const goUpFace = () => { leCube.style.transform = "rotate3d(-1, -0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(-1, 0, 0, 90deg) translateY(-450px)"; }
-        const goUpFace = () => { leCube.style.transform = "rotate3d(-1, 0, 0, 90deg) translateY(-450px)"; }
+        const goUpFace = () => { leCube.style.transform = "rotate3d(-1, 0, 0, 90deg)"; }
         // const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(1, 0, 0, 90deg) translateY(450px)"; }
-        const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0, 0, 90deg) translateY(450px)"; }
+        const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0, 0, 90deg)"; }
         // const goRearFace = () => { leCube.style.transform = "rotate3d(-0, 1, -0.1, 195deg)"; leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
-        const goRearFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
+        const goRearFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 180deg)"; }
 
 
         // depuis la position XX : direction nouvelle face (=dir) => YY  -  mouvement (=mvt) => goYY
