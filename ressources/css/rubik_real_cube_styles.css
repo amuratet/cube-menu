@@ -122,11 +122,13 @@ div#face_avant:hover {
     align-items: flex-start; */
     /* background-color: rgba(212, 107, 8, 0.7); */
     background: linear-gradient(to bottom right, rgba(145, 2, 2, 0.9), rgba(6, 45, 102, 0.9));
+    background: linear-gradient(to bottom right, rgba(109, 5, 57, 0.9), rgba(6, 45, 102, 0.9));
     /* background: url("../devon/devon1.png"); */
     /* opacity: .5; */
     font-size: 1.5em;
     line-height: 2em;
     padding: .5em;
+    color: #eee;
     /* color: white; */
 }
 .menuAccueil > .titreFaceMenu {
@@ -140,6 +142,7 @@ div#face_avant:hover {
 }
 .menuAccueil .sousTitreFaceMenu {
     font-size: .8em;
+    text-shadow: 0 0 0 10px #000;
 }
 .menuAccueil > .faceMenus {
     display: flex; 
@@ -147,13 +150,12 @@ div#face_avant:hover {
     justify-content: center;
 }
 .menuAccueil > .faceMenus p {
-    border: 1px solid rgb(219, 161, 161);
+    border: 1px solid rgb(46, 46, 46);
     border-radius: .2em;
     margin: .2em;
     padding: 0 .2em;
     background-color: rgb(46, 46, 46);
     text-align: center;
-    box-shadow: 0px 0px 20px black;
     box-shadow: 0px 0px 20px black inset;
 }
 
@@ -166,12 +168,13 @@ PLACEMENTS FACES + IMAGES
 div#face_arriere {
     transform: rotateY(180deg) translateZ(150px);
 }
-.mathieu {
-    background: black url("../mathieu/mathieu.png") no-repeat center center;
+.fArriere {
+    background: black url("../cubeBackgrounds/DeLoreanCut.jpeg") no-repeat center center;
+
     background-size: cover;
     /* opacity: .8; */
 }
-.mathieu:hover {
+.fArriere:hover {
     cursor: url(../cursors/gremlin.png), pointer;
 }
 
@@ -180,7 +183,7 @@ div#face_gauche {
     transform: rotateY(-90deg) translateZ(150px);
 }
 .devon {
-    background: black url("../devon/devon1.png") no-repeat center center;
+    background: black url("../cubeBackgrounds/FightClubCut.jpg") no-repeat center center;
     background-size: cover;
     /* opacity: .8; */
 }
@@ -193,7 +196,7 @@ div#face_droite {
     transform: rotateY(90deg) translateZ(150px);
 }
 .cecile {
-    background: black url("../cecile/cecile2.png") no-repeat center center;
+    background: black url("../cubeBackgrounds/MandalorianCut.jpg") no-repeat center center;
     background-size: cover;
     /* opacity: .8; */
 }
@@ -206,7 +209,7 @@ div#face_haut {
     transform: rotateX(90deg) translateZ(150px);
 }
 .morghan {
-    background: black url("../morghan/morghan.png") no-repeat top center;
+    background: black url("../cubeBackgrounds/MatrixCut.jpg") no-repeat top center;
     background-size: cover;
     /* opacity: .8; */
 }
@@ -219,7 +222,7 @@ div#face_bas {
     transform: rotateX(-90deg) translateZ(150px);
 }
 .joyce {
-    background: black url("../joyce/joyce.png") no-repeat top center;
+    background: black url("../cubeBackgrounds/UnicornLegoCut.jpg") no-repeat top center;
     background-size: cover;
     /* opacity: .8; */
 }
